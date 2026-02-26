@@ -25,7 +25,7 @@ export default function Blog() {
           {/* md 이상: 아래 줄 오른쪽 정렬 */}
           <div className="mt-4 hidden md:flex justify-end">
             <a
-              href="https://velog.io/@your-id"
+              href="https://velog.io/@s0912135/posts"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-1 py-1 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:underline hover:underline-offset-4 hover:decoration-1 hover:decoration-zinc-300 transition-colors"
@@ -59,7 +59,7 @@ export default function Blog() {
         {/* 모바일 전체 링크 */}
         <div className="mt-6 md:hidden flex justify-center">
           <a
-            href="https://velog.io/@your-id"
+            href="https://velog.io/@s0912135/posts"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 underline underline-offset-4 decoration-zinc-300 hover:decoration-zinc-500 transition-colors"
