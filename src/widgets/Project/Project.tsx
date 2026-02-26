@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const Project = () => {
   return (
     <motion.section
+      id="projects"
       initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-80px" }}

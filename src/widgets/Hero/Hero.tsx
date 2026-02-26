@@ -37,7 +37,7 @@ export default function Hero() {
         {/* 버튼 그룹 */}
         <div className="flex items-center gap-6">
           <a
-            href="#projects"
+            href="#project"
             className="text-sm text-black hover:opacity-60 transition-opacity"
           >
             프로젝트 보기
