@@ -6,6 +6,7 @@ export const SKILL_DATA = [
   { id: "nextjs", category: "frontend" },
   { id: "javascript", category: "frontend" },
   { id: "tailwind", category: "frontend" },
+  { id: "styledcomponents ", category: "frontend" },
   { id: "git", category: "tool" },
   { id: "supabase", category: "tool" },
   { id: "figma", category: "design" },
@@ -17,7 +18,7 @@ interface SkillListProps {
 
 const SkillList = ({ activeCategory }: SkillListProps) => {
   return (
-    <div className="grid grid-cols-4 md:grid-cols-6 gap-6">
+    <div className="grid grid-cols-4 md:grid-cols-5 gap-6">
       {SKILL_DATA.map((item) => (
         <SkillBadge
           key={item.id}

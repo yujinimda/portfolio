@@ -28,22 +28,12 @@
   font-family: 'Noto Sans KR', sans-serif;
 }
 
-/* Hero5 전용 애니메이션 */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+html, body {
+  height: 100%;
 }
 
-.animate-fadeUp {
-  animation: fadeUp 0.8s ease forwards;
+body {
+  background: #fafafa; scroll-behavior: smooth;
 }
 
-.sction-title {
-  @apply text-2xl font-bold mb-6 ;
-}
+

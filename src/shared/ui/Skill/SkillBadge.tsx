@@ -22,6 +22,7 @@ const SkillBadge = ({ size = "md", skill, isActive }: SkillBadgeProps) => {
           src={`https://skillicons.dev/icons?i=${skill}`}
           alt={skill}
           className="w-full h-full object-contain"
+          loading="lazy"
         />
       </div>
 

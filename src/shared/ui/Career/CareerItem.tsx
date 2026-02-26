@@ -1,22 +1,19 @@
+import type { CareerDataItem } from "@/shared/constans/careerData";
 import { useMemo, useState } from "react";
-import type { CareerDataItem } from "../../../widgets/Career/career_data";
 
 export const CareerItem = ({ item }: { item: CareerDataItem }) => {
   const [open, setOpen] = useState(false);
 
-  // description: [{ item: string[] }][] -> string[] 로 펼침
   const descriptionList = useMemo(
     () => item.description.flatMap((group) => group.item),
-    [item.description]
+    [item.description],
   );
 
   return (
-    <div className="border-b border-neutral-200/80 py-12 px-6 rounded-2xl transition-all duration-300 hover:bg-neutral-50/40">
+    <div className="px-6 transition-all duration-300 hover:bg-neutral-50/40">
       <div className="flex justify-between items-start gap-6">
         <div className="min-w-0">
-          {/* 포인트 컬러는 여기 1곳만 */}
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-400" />
             <p className="text-sm text-neutral-400 tracking-wide">
               {item.period}
             </p>
@@ -37,22 +34,23 @@ export const CareerItem = ({ item }: { item: CareerDataItem }) => {
           type="button"
           onClick={() => setOpen((prev) => !prev)}
           aria-expanded={open}
-          className="shrink-0 flex items-center gap-2 text-sm text-neutral-400 hover:text-neutral-700 transition-colors duration-300"
+          className="shrink-0 inline-flex items-center gap-2 px-1 py-1 text-sm font-medium text-zinc-500 hover:text-zinc-900 hover:underline hover:underline-offset-4 hover:decoration-1 hover:decoration-zinc-300 transition-colors cursor-pointer"
         >
-          <span>{open ? item.hideLabel : "주요 업무 보기"}</span>
+          <span>{open ? "접기" : "주요 업무 보기"}</span>
           <svg
-            className={`w-4 h-4 transition-transform duration-300 ${
+            className={`h-5 w-5 mt-[2px] transition-transform ${
               open ? "rotate-180" : ""
             }`}
+            viewBox="0 0 20 20"
             fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            viewBox="0 0 24 24"
+            aria-hidden="true"
           >
             <path
+              d="M6 8l4 4 4-4"
+              stroke="currentColor"
+              strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M6 9l6 6 6-6"
             />
           </svg>
         </button>
@@ -63,7 +61,7 @@ export const CareerItem = ({ item }: { item: CareerDataItem }) => {
           open ? "max-h-[600px] opacity-100 mt-8" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="rounded-xl bg-neutral-50/70 border border-neutral-100 px-4 py-4">
+        <div className="rounded-xl bg-white border border-neutral-100 px-4 py-2">
           <ul className="space-y-3 text-neutral-600 leading-relaxed text-sm">
             {descriptionList.map((desc, i) => (
               <li key={`${desc}-${i}`} className="flex gap-3">
@@ -74,6 +72,9 @@ export const CareerItem = ({ item }: { item: CareerDataItem }) => {
           </ul>
         </div>
       </div>
+
+      {/* 구분선 */}
+      <div className="mx-auto mt-10 h-px w-full bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
     </div>
   );
 };

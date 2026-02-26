@@ -1,7 +1,8 @@
-import CardList from "../../shared/ui/Card/CardList";
+import { EDUCATION_DATA } from "@/shared/constans/educationData";
+import { EducationItem } from "@/shared/ui/Education/EducationItem";
 import { motion } from "framer-motion";
 
-const Project = () => {
+const Education = () => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
@@ -10,13 +11,18 @@ const Project = () => {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col items-center justify-center py-30 px-6 max-w-6xl mx-auto"
     >
-      <h2 className="text-2xl md:text-3xl font-bold">프로젝트</h2>
+      <h2 className="text-2xl md:text-3xl font-bold">경험 · 활동 · 교육</h2>
       <p className="mt-3 text-[15px] md:text-base leading-relaxed text-zinc-500 mb-10">
-        구현한 프로젝트를 간단히 정리했습니다.
+        직무 역량을 키운 교육·캠프 수료 내역을 정리했습니다.
       </p>
-      <CardList />
+
+      <div className="w-full max-w-6xl space-y-4">
+        {EDUCATION_DATA.map((item) => (
+          <EducationItem key={item.id} item={item} />
+        ))}
+      </div>
     </motion.section>
   );
 };
 
-export default Project;
+export default Education;
