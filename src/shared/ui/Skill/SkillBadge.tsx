@@ -8,21 +8,20 @@ const SkillBadge = ({ size = "md", skill, isActive }: SkillBadgeProps) => {
   return (
     <div
       className={`
-      relative group/skill flex flex-col items-center transition-all duration-500
+      relative group/skill flex flex-col items-center transition-all duration-500 
       ${
         isActive
           ? "opacity-100 scale-100 grayscale-0"
           : "opacity-20 scale-90 grayscale"
       }
-      ${size === "sm" ? "w-8 h-8" : "w-12 h-12 md:w-16 md:h-16"}
+      ${size === "sm" ? "w-8 h-8" : "w-12 h-12 md:w-14 md:h-14"}
     `}
     >
       <div className="w-full h-full">
         <img
-          src={`https://skillicons.dev/icons?i=${skill}`}
+          src={`/images/${skill}.svg`}
           alt={skill}
           className="w-full h-full object-contain"
-          loading="lazy"
         />
       </div>
 

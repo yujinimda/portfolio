@@ -1,7 +1,16 @@
+export type ProjectDescItem =
+  | string
+  | {
+      text: string;     
+      image?: string;   
+      code?: string;    
+    };
+
 export interface ProjectDescription {
   title: string;
-  item: string[];
+  item: ProjectDescItem[];
 }
+
 export interface ProjectInfo {
   period: string;
   skills: string[];
