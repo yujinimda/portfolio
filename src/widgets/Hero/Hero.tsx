@@ -29,9 +29,9 @@ export default function Hero() {
 
         {/* 설명 */}
         <p className="text-base md:text-lg text-black/50 leading-relaxed mb-10">
-          퍼블리셔로 시작해 프론트엔드까지,
+          화면을 ‘그리는’ 단계에서 ‘동작시키는’ 단계까지,
           <br />
-          화면의 처음과 끝을 설계하는 개발자입니다.
+          전체 흐름을 설계하는 개발자입니다.
         </p>
 
         {/* 버튼 그룹 */}
