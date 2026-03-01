@@ -19,11 +19,6 @@ const Card = ({ project }: CardProps) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const getFirstUrl = (raw: string) => {
-    const m = raw.match(/https?:\/\/[^\s)]+/);
-    return m?.[0];
-  };
-
   return (
     <>
       <div
