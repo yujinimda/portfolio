@@ -66,10 +66,13 @@ Modal.Header = ({ title, subTitle, info, links }: Project) => {
   const githubLink = links.find((link) =>
     link.label.toLowerCase().includes("github"),
   );
-  // 라벨명에 'website'가 포함된 링크 찾기
   const siteLink = links.find((link) =>
     link.label.toLowerCase().includes("website"),
   );
+  const notionLink = links.find((link) => {
+    const l = link.label.toLowerCase();
+    return l.includes("notion") || l.includes("노션");
+  });
   return (
     <div className="p-10 border-b border-slate-100 flex justify-between items-start bg-white">
       <div className="space-y-6 flex-1">
@@ -118,6 +121,16 @@ Modal.Header = ({ title, subTitle, info, links }: Project) => {
               className="text-sm font-medium hover:text-[#2F7F57] "
             >
               🌐 사이트
+            </a>
+          )}
+          {notionLink && (
+            <a
+              href={notionLink.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium hover:text-[#2F7F57]"
+            >
+              📝 노션
             </a>
           )}
         </div>
