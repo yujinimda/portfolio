@@ -14,7 +14,7 @@ const data: Project[] = [
         item: [
           {
             text: "Webhook으로 n8n 워크플로우를 트리거하고 REST API로 변경 파일·일반 댓글·라인 리뷰 댓글을 한 번에 수집",
-            image: "/public/images/devcraft_01.png",
+            image: "/images/devcraft_01.png",
           },
           "Merge + JS 노드로 타입 분리·평탄화·HTML 제거 등 전처리, GitHub GraphQL 묶음 조회로 의존성 맵 생성 및 ECharts 리포트 시각화",
           "웹훅·GitHub API·모델 호출을 단계별로 분리해 실패 지점을 명확히 하고 에러 응답을 일관된 형태로 반환",
@@ -174,7 +174,7 @@ const data: Project[] = [
         title: "GitHub 기반 프로젝트 관리 및 CI 설정",
         item: [{
           text: "팀장으로서 Milestones·Issues로 개발 진행도를 시각화, 우선순위를 유연하게 조정하며 데드라인 준수",
-          image:"/public/images/nomard_04.png"
+          image:"/images/nomard_04.png"
         },  
          
           "PR 생성·업데이트 시 린트·타입체크·빌드 검증을 자동 실행, pnpm 캐시 전략으로 검사 시간 단축",
@@ -185,7 +185,7 @@ const data: Project[] = [
         title: "API 표준 규칙 수립 및 에러 처리 일원화",
         item: [{
            text: "clientApi/serverApi 계층 분리와 스키마 검증 기반 응답 처리로 런타임 타입 불일치 문제를 줄이고 실행 환경별 호출 패턴을 고정",
-           image: "/public/images/nomard_02.png",
+           image: "/images/nomard_02.png",
         },
           "공통 ApiError 타입으로 에러를 정규화해 컴포넌트·훅·서버 라우트에서 동일한 방식으로 처리, 디버깅 및 유지보수 속도 향상",
         ],
@@ -194,7 +194,7 @@ const data: Project[] = [
         title: "로그인 인증 플로우 설계",
         item: [{
           text:"인증 판단은 BFF(API Route) + Middleware 서버 영역에서 수행, 토큰은 HttpOnly Cookie로만 관리해 클라이언트에 노출하지 않음",
-          image: "/public/images/nomard_03.png",
+          image: "/images/nomard_03.png",
         },
           "Middleware는 쿠키 존재 여부만으로 접근 제어·리다이렉트를 처리하고, Layout(Server Component)에서 /users/me를 프리패치해 React Query Hydration으로 하위 컴포넌트에 사용자 정보를 공유",
           "Zustand는 인증 책임을 완전히 분리해 UI 상태 전용으로만 사용, '보안은 서버에서 · 데이터는 Query에서 · UI는 Zustand에서' 원칙으로 각 레이어의 책임 경계를 명확히 설계",
@@ -221,7 +221,7 @@ const data: Project[] = [
        item: [
           {
             text: "FSD 레이어(app/pages/widgets/features/entities/shared) 기준으로 UI 조합·비즈니스 로직·도메인 모델의 경계를 분리, 도메인 단위(Activity/Reservation/User/Review/Notification)로 Bounded Context 설정",
-            image: "/public/images/nomard_01.png",
+            image: "/images/nomard_01.png",
             code: "정리 링크: https://github.com/FE19-Team3/global_nomad/discussions/23",
           },
           "entities는 상태·결과만 책임지고, 역할·권한·흐름 판단은 features(Use Case)에서 처리하는 원칙으로 레이어 간 책임 경계를 명확히 정의",
