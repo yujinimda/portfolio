@@ -135,8 +135,33 @@ const data: Project[] = [
       {
         title: "Supabase + GitHub OAuth 인증 및 유저 데이터 연동",
         item: [
-          "GitHub 로그인 시 자체 토큰 발급 후 유저 테이블에 저장, 유저별 문서 생성 옵션을 별도 테이블로 관리해 재방문 시 이전 설정 유지",
-          "민감한 API Key 노출 방지를 위해 서버 사이드에서 먼저 처리하고 보안 강화된 데이터만 클라이언트에 전달",
+         "GitHub OAuth로 로그인 시 자체 JWT를 발급하고 유저별 문서 생성 옵션을 별도 테이블로 관리해 재방문 시 이전 설정 유지",
+         "API Key·토큰 등 민감 정보는 서버에서만 처리하고 클라이언트에는 필요한 데이터만 전달하는 BFF 구조로 보안 계층 분리",
+         "GitHub 계정 없이도 체험 가능한 게스트 로그인 구현: 고정 UUID로 토큰을 발급하되 GitHub API 접근은 차단해 권한 범위를 제한",
+        ],
+      },
+      {
+        title: "Compound Component 패턴 기반 공통 UI 설계",
+        item: [
+          "Modal·Popover·Accordion을 Context + 서브컴포넌트 조합으로 구현, 사용처마다 내부 구조를 자유롭게 구성 가능하도록 설계",
+          "모달은 배열 기반 스택으로 중첩 상태를 관리하고, modalController를 분리해 컴포넌트 외부에서도 modal.alert() / modal.confirm()으로 호출 가능한 명령형 API 구현",
+          "Popover는 제어/비제어 모드를 모두 지원하고 외부 클릭·ESC 닫기를 내부 처리, Accordion은 단일 열림/다중 열림 모드 전환을 prop 하나로 제어",
+        ],
+      },
+     {
+        title: "공개 피드 페이지 구현 (모두의 공방)",
+        item: [
+          "최신순은 created_at 기반 커서 페이지네이션, 인기순은 offset 페이지네이션으로 정렬 방식별 요청 전략을 분리",
+          "서버에서 prefetchInfiniteQuery로 첫 페이지를 미리 불러오고 HydrationBoundary로 클라이언트에 전달 이후 스크롤은 intersection-observer로 다음 페이지를 자동 요청",
+          "검색어를 URL searchParams에 동기화해 새로고침·링크 공유 시에도 상태 유지, 디바운스로 입력 중 불필요한 요청 방지",
+        ],
+      },
+      {
+        title: "개인 대시보드 및 포스트 관리 (나의 공방)",
+        item: [
+          "동적 라우트로 유저별 페이지를 분리하고 사이드바에서 레포지토리별 필터링과 글 개수 집계를 제공",
+          "Recharts로 기술 스택 분포·주간 활동량·좋아요 TOP 3을 한 화면에 시각화, 집계는 Supabase RPC 함수로 서버에서 처리",
+          "좋아요 토글 시 낙관적 업데이트로 UI를 즉시 반영하고 실패 시 onError에서 이전 상태로 롤백",
         ],
       },
       {
@@ -153,10 +178,6 @@ const data: Project[] = [
         url: "https://github.com/YY-Studios/dev-craft/",
       },
        {
-        label: "개발자 공방 website",
-        url: "https://dev-craft-lake.vercel.app/",
-      },
-         {
         label: "개발자 공방 website",
         url: "https://dev-craft-lake.vercel.app/",
       },
